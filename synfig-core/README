@@ -1,4 +1,4 @@
-              synfig -- vector animation renderer
+      Synfig - vector animation rendering library and CLI
 
 synfig is a vector based 2D animation package. It is designed to be
 capable of producing feature-film quality animation. It eliminates the
@@ -15,15 +15,14 @@ libavcodec (AVI), imagemagick (MIFF), yuv420p, MNG and others.
 
 Links
 
-Web:  	http://synfig.org/
-Wiki:	http://wiki.synfig.org
-Forums:	http://synfig.org/forums
-Proj: 	http://sourceforge.net/projects/synfig/
-Bugs:	https://github.com/synfig/synfig/issues
-IRC:  	irc://irc.freenode.net/synfig
+Web:         http://synfig.ru/
+Docs:        http://docs.synfig.ru/
+Forums:      https://community.morevna-school.ru/c/synfig/6
+Code:        https://tvoygit.ru/morevnaproject/synfig
+Bug Tracker: https://tvoygit.ru/morevnaproject/synfig/issues
+Telegram:    https://t.me/synfig
 
-
-Please use the IRC channel and the bug tracker to get support and
+Please use Forums and the bug tracker to get support and
 report bugs, request features and submit patches.
 
 Copyright
@@ -44,3 +43,4 @@ Copyright 2012 Bertrand Greorie
 Copyright 2013-2015 Ivan Mahonin
 Copyright 2015 Denis Zdorovtsov
 Copyright 2015 Max May
+Copyright 2021-2023 ANO "Morevna Project" OATDC

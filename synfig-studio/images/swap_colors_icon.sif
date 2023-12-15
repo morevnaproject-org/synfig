@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
-<canvas version="0.7" width="128" height="128" xres="2834.645691" yres="2834.645691" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="24.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas version="1.1" width="128" height="128" xres="2834.645691" yres="2834.645691" gamma-r="2.200000" gamma-g="2.200000" gamma-b="2.200000" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="24.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
   <name>Untitled1</name>
   <meta name="grid_show" content="0"/>
   <meta name="grid_size" content="0.125000 0.125000"/>
   <meta name="grid_snap" content="1"/>
   <meta name="guide_snap" content="0"/>
-  <layer type="outline" active="true" version="0.2" desc="Line Outline">
+  <layer type="outline" active="true" exclude_from_rendering="false" version="0.3" desc="Line Outline">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -45,9 +45,9 @@
       <integer value="0"/>
     </param>
     <param name="bline">
-      <bline type="bline_point" loop="false">
+      <bline type="bline_point">
         <entry>
-          <composite type="bline_point">
+          <composite guid="64BDB2F6B05EDB503B206AF2B2296855" type="bline_point">
             <point>
               <vector>
                 <x>-0.2500000000</x>
@@ -83,10 +83,16 @@
                 </theta>
               </radial_composite>
             </t2>
+            <split_radius>
+              <bool value="false"/>
+            </split_radius>
+            <split_angle>
+              <bool value="false"/>
+            </split_angle>
           </composite>
         </entry>
         <entry>
-          <composite type="bline_point">
+          <composite guid="2998A178D4FF84141A9E6CB574E220D9" type="bline_point">
             <point>
               <vector>
                 <x>0.3750000000</x>
@@ -122,6 +128,12 @@
                 </theta>
               </radial_composite>
             </t2>
+            <split_radius>
+              <bool value="false"/>
+            </split_radius>
+            <split_angle>
+              <bool value="false"/>
+            </split_angle>
           </composite>
         </entry>
       </bline>
@@ -141,14 +153,11 @@
     <param name="round_tip[1]">
       <bool value="true"/>
     </param>
-    <param name="loopyness">
-      <real value="1.0000000000"/>
-    </param>
     <param name="homogeneous_width">
       <bool value="true"/>
     </param>
   </layer>
-  <layer type="polygon" active="true" version="0.1" desc="Polygon004">
+  <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1" desc="Polygon004">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -190,19 +199,19 @@
     <param name="vector_list">
       <dynamic_list type="vector">
         <entry>
-          <vector>
+          <vector guid="A6FDDEAFDD0E7630AD61C78F0FBECCC1">
             <x>-0.1250000000</x>
             <y>-0.2500000000</y>
           </vector>
         </entry>
         <entry>
-          <vector>
+          <vector guid="728FD17E91F7AFA69E0975F3376622B4">
             <x>0.3750000000</x>
             <y>-0.8750000000</y>
           </vector>
         </entry>
         <entry>
-          <vector>
+          <vector guid="E1F48BB3CB37FF54DE7FED111D54B7F3">
             <x>0.8750000000</x>
             <y>-0.2500000000</y>
           </vector>
@@ -210,7 +219,7 @@
       </dynamic_list>
     </param>
   </layer>
-  <layer type="polygon" active="true" version="0.1" desc="Polygon003">
+  <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1" desc="Polygon003">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -252,19 +261,19 @@
     <param name="vector_list">
       <dynamic_list type="vector">
         <entry>
-          <vector>
+          <vector guid="0E6B90E25FDA83F4AF63D23FF0B29551">
             <x>-0.2500000000</x>
             <y>0.8750000000</y>
           </vector>
         </entry>
         <entry>
-          <vector>
+          <vector guid="4D5C2DFF6EB827CCD3A68B07603B474C">
             <x>-0.8750000000</x>
             <y>0.3750000000</y>
           </vector>
         </entry>
         <entry>
-          <vector>
+          <vector guid="2FF665324EF30A8A3399FE78A64180BD">
             <x>-0.2500000000</x>
             <y>-0.1250000000</y>
           </vector>
@@ -272,7 +281,7 @@
       </dynamic_list>
     </param>
   </layer>
-  <layer type="shade" active="true" version="0.2">
+  <layer type="shade" active="true" exclude_from_rendering="false" version="0.2">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -284,9 +293,9 @@
     </param>
     <param name="color">
       <color>
-        <r>0.000000</r>
-        <g>0.000000</g>
-        <b>0.000000</b>
+        <r>1.000000</r>
+        <g>1.000000</g>
+        <b>1.000000</b>
         <a>1.000000</a>
       </color>
     </param>
@@ -309,7 +318,7 @@
       <bool value="false"/>
     </param>
   </layer>
-  <layer type="zoom" active="true" version="0.1">
+  <layer type="zoom" active="true" exclude_from_rendering="false" version="0.1">
     <param name="amount">
       <real value="-0.0500000000"/>
     </param>

@@ -204,18 +204,13 @@ MainWindow::init_menus()
 	#define URL(action_name,title,url) \
 		action_group->add( Gtk::Action::create(action_name, title), \
 			sigc::bind(sigc::ptr_fun(&studio::App::open_uri),url))
-	#define WIKI(action_name,title,page) \
-		URL(action_name,title, "https://wiki.synfig.org/" + String(page))
 
 	action_group->add( Gtk::Action::create("help", Gtk::Stock::HELP),
 		sigc::ptr_fun(studio::App::dialog_help)
 	);
 
 	// TRANSLATORS:         | Help menu entry:              | A wiki page:          |
-	URL("help-tutorials",	_("Tutorials"),					_("https://synfig.readthedocs.io/en/latest/tutorials.html"));
-	WIKI("help-reference",	_("Reference"),					_("Category:Reference"));
-	URL("help-faq",		_("Frequently Asked Questions"),	_("https://wiki.synfig.org/FAQ")				);
-	URL("help-support",		_("Get Support"),				_("https://forums.synfig.org/")	);
+	URL("help-support",		_("Get Support"),				_("https://community.morevna-school.ru/c/synfig/6")	);
 
 	action_group->add( Gtk::Action::create(
 			"help-about", Gtk::StockID("synfig-about"), _("About Synfig Studio")),

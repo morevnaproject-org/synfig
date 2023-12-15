@@ -1,9 +1,24 @@
-<?xml version="1.0"?>
-<canvas version="0.7" width="128" height="128" xres="2834.645752" yres="2834.645752" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="30.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas version="1.1" width="128" height="128" xres="2834.645752" yres="2834.645752" gamma-r="2.200000" gamma-g="2.200000" gamma-b="2.200000" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="30.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
   <name>Untitled1</name>
+  <meta name="background_first_color" content="0.880000 0.880000 0.880000"/>
+  <meta name="background_rendering" content="0"/>
+  <meta name="background_second_color" content="0.650000 0.650000 0.650000"/>
+  <meta name="background_size" content="15.000000 15.000000"/>
+  <meta name="grid_color" content="0.623529 0.623529 0.623529"/>
+  <meta name="grid_show" content="0"/>
+  <meta name="grid_size" content="0.250000 0.250000"/>
+  <meta name="grid_snap" content="0"/>
+  <meta name="guide_color" content="0.435294 0.435294 1.000000"/>
+  <meta name="guide_show" content="1"/>
+  <meta name="guide_snap" content="0"/>
+  <meta name="jack_offset" content="0.000000"/>
+  <meta name="onion_skin" content="0"/>
+  <meta name="onion_skin_future" content="0"/>
+  <meta name="onion_skin_past" content="1"/>
   <defs>
-    <canvas id="Item" width="128" height="128" xres="2952.755900" yres="2952.755900" bgcolor="0.500000 0.500000 0.500000 1.000000">
-      <layer type="polygon" active="true" version="0.1">
+    <canvas id="Item" xres="2952.755900" yres="2952.755900" bgcolor="0.500000 0.500000 0.500000 1.000000">
+      <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1">
         <param name="z_depth">
           <real value="0.0000000000"/>
         </param>
@@ -45,25 +60,25 @@
         <param name="vector_list">
           <dynamic_list type="vector">
             <entry>
-              <vector>
+              <vector guid="E72DD03161F70A35731B65BDF75A141D">
                 <x>-0.4000000060</x>
                 <y>0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="631BCFEAB2F48C9C8411DE332EDCB824">
                 <x>-0.4000000060</x>
                 <y>-0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="5A31DB2375ABD196D2651FACC9F61179">
                 <x>0.4000000060</x>
                 <y>-0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="CBA16E972002A07DC3B83FB8C5DDF217">
                 <x>0.4000000060</x>
                 <y>0.4000000060</y>
               </vector>
@@ -71,7 +86,7 @@
           </dynamic_list>
         </param>
       </layer>
-      <layer type="blur" active="true" version="0.2">
+      <layer type="blur" active="true" exclude_from_rendering="false" version="0.3">
         <param name="z_depth">
           <real value="0.0000000000"/>
         </param>
@@ -83,15 +98,15 @@
         </param>
         <param name="size">
           <vector>
-            <x>0.1000000015</x>
-            <y>0.1000000015</y>
+            <x>0.0342190713</x>
+            <y>0.0342190713</y>
           </vector>
         </param>
         <param name="type">
           <integer value="1"/>
         </param>
       </layer>
-      <layer type="polygon" active="true" version="0.1">
+      <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1">
         <param name="z_depth">
           <real value="0.0000000000"/>
         </param>
@@ -133,25 +148,25 @@
         <param name="vector_list">
           <dynamic_list type="vector">
             <entry>
-              <vector>
+              <vector guid="ACFBA4E96FC56F4DF975E71835D65978">
                 <x>-0.4000000060</x>
                 <y>0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="66BB6AEB2A122676E9E126048BC6E7D0">
                 <x>-0.4000000060</x>
                 <y>-0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="D4055673AD721CD15A57D1F2214DEA29">
                 <x>0.4000000060</x>
                 <y>-0.4000000060</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="297A254383BEDD4423F959B39F8CE1D9">
                 <x>0.4000000060</x>
                 <y>0.4000000060</y>
               </vector>
@@ -159,7 +174,7 @@
           </dynamic_list>
         </param>
       </layer>
-      <layer type="polygon" active="true" version="0.1">
+      <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1">
         <param name="z_depth">
           <real value="0.0000000000"/>
         </param>
@@ -201,25 +216,25 @@
         <param name="vector_list">
           <dynamic_list type="vector">
             <entry>
-              <vector>
+              <vector guid="F3AE06356288F41ACFFDAB5987D67869">
                 <x>-0.3000000119</x>
                 <y>0.3000000119</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="3A6DAC3378CFCA17955B2B8748F073F0">
                 <x>-0.3000000119</x>
                 <y>-0.3000000119</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="4B44E420C2CDF21FB31FD3C706037628">
                 <x>0.3000000119</x>
                 <y>-0.3000000119</y>
               </vector>
             </entry>
             <entry>
-              <vector>
+              <vector guid="8C15574B7DF9FBE629637840D3B5D767">
                 <x>0.3000000119</x>
                 <y>0.3000000119</y>
               </vector>
@@ -229,73 +244,7 @@
       </layer>
     </canvas>
   </defs>
-  <layer type="PasteCanvas" active="true" version="0.1">
-    <param name="z_depth">
-      <real value="0.0000000000"/>
-    </param>
-    <param name="amount">
-      <real value="1.0000000000"/>
-    </param>
-    <param name="blend_method">
-      <integer value="0"/>
-    </param>
-    <param name="origin">
-      <vector>
-        <x>0.4000000060</x>
-        <y>-0.4000000060</y>
-      </vector>
-    </param>
-    <param name="canvas" use="Item"/>
-    <param name="zoom">
-      <real value="0.0000000000"/>
-    </param>
-    <param name="time_offset">
-      <time value="0s"/>
-    </param>
-    <param name="children_lock">
-      <bool value="false" static="true"/>
-    </param>
-    <param name="focus">
-      <vector>
-        <x>0.0000000000</x>
-        <y>0.0000000000</y>
-      </vector>
-    </param>
-  </layer>
-  <layer type="PasteCanvas" active="true" version="0.1">
-    <param name="z_depth">
-      <real value="0.0000000000"/>
-    </param>
-    <param name="amount">
-      <real value="1.0000000000"/>
-    </param>
-    <param name="blend_method">
-      <integer value="0"/>
-    </param>
-    <param name="origin">
-      <vector>
-        <x>-0.5000000000</x>
-        <y>0.5000000000</y>
-      </vector>
-    </param>
-    <param name="canvas" use="Item"/>
-    <param name="zoom">
-      <real value="0.0000000000"/>
-    </param>
-    <param name="time_offset">
-      <time value="0s"/>
-    </param>
-    <param name="children_lock">
-      <bool value="false" static="true"/>
-    </param>
-    <param name="focus">
-      <vector>
-        <x>0.0000000000</x>
-        <y>0.0000000000</y>
-      </vector>
-    </param>
-  </layer>
-  <layer type="polygon" active="true" version="0.1">
+  <layer type="rectangle" active="false" exclude_from_rendering="false" version="0.2" desc="Rectangle">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -313,84 +262,376 @@
         <a>1.000000</a>
       </color>
     </param>
+    <param name="point1">
+      <vector>
+        <x>-4.2678790092</x>
+        <y>4.0238909721</y>
+      </vector>
+    </param>
+    <param name="point2">
+      <vector>
+        <x>4.8850650787</x>
+        <y>-3.8779036999</y>
+      </vector>
+    </param>
+    <param name="expand">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="invert">
+      <bool value="false"/>
+    </param>
+    <param name="feather_x">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="feather_y">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="bevel">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="bevCircle">
+      <bool value="true"/>
+    </param>
+  </layer>
+  <layer type="group" active="true" exclude_from_rendering="false" version="0.3">
+    <param name="z_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="amount">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="blend_method">
+      <integer value="0" static="true"/>
+    </param>
     <param name="origin">
       <vector>
         <x>0.0000000000</x>
         <y>0.0000000000</y>
       </vector>
     </param>
-    <param name="invert">
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <vector>
+            <x>0.0000000000</x>
+            <y>0.0000000000</y>
+          </vector>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
+    <param name="canvas">
+      <canvas>
+        <layer type="group" active="true" exclude_from_rendering="false" version="0.3">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0"/>
+          </param>
+          <param name="origin">
+            <vector>
+              <x>0.0000000000</x>
+              <y>0.0000000000</y>
+            </vector>
+          </param>
+          <param name="transformation">
+            <composite type="transformation">
+              <offset>
+                <vector>
+                  <x>0.4000000060</x>
+                  <y>-0.4000000060</y>
+                </vector>
+              </offset>
+              <angle>
+                <angle value="0.000000"/>
+              </angle>
+              <skew_angle>
+                <angle value="0.000000"/>
+              </skew_angle>
+              <scale>
+                <vector>
+                  <x>1.0000000000</x>
+                  <y>1.0000000000</y>
+                </vector>
+              </scale>
+            </composite>
+          </param>
+          <param name="canvas" use=":Item"/>
+          <param name="time_dilation">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+          <param name="children_lock">
+            <bool value="false" static="true"/>
+          </param>
+          <param name="outline_grow">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range">
+            <bool value="false" static="true"/>
+          </param>
+          <param name="z_range_position">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range_blur">
+            <real value="0.0000000000"/>
+          </param>
+        </layer>
+        <layer type="group" active="true" exclude_from_rendering="false" version="0.3">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0"/>
+          </param>
+          <param name="origin">
+            <vector>
+              <x>0.0000000000</x>
+              <y>0.0000000000</y>
+            </vector>
+          </param>
+          <param name="transformation">
+            <composite type="transformation">
+              <offset>
+                <vector>
+                  <x>-0.5000000000</x>
+                  <y>0.5000000000</y>
+                </vector>
+              </offset>
+              <angle>
+                <angle value="0.000000"/>
+              </angle>
+              <skew_angle>
+                <angle value="0.000000"/>
+              </skew_angle>
+              <scale>
+                <vector>
+                  <x>1.0000000000</x>
+                  <y>1.0000000000</y>
+                </vector>
+              </scale>
+            </composite>
+          </param>
+          <param name="canvas" use=":Item"/>
+          <param name="time_dilation">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="time_offset">
+            <time value="0s"/>
+          </param>
+          <param name="children_lock">
+            <bool value="false" static="true"/>
+          </param>
+          <param name="outline_grow">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range">
+            <bool value="false" static="true"/>
+          </param>
+          <param name="z_range_position">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="z_range_blur">
+            <real value="0.0000000000"/>
+          </param>
+        </layer>
+        <layer type="polygon" active="true" exclude_from_rendering="false" version="0.1">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="1.0000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="0"/>
+          </param>
+          <param name="color">
+            <color>
+              <r>0.000000</r>
+              <g>0.000000</g>
+              <b>0.000000</b>
+              <a>1.000000</a>
+            </color>
+          </param>
+          <param name="origin">
+            <vector>
+              <x>0.0000000000</x>
+              <y>0.0000000000</y>
+            </vector>
+          </param>
+          <param name="invert">
+            <bool value="false"/>
+          </param>
+          <param name="antialias">
+            <bool value="true"/>
+          </param>
+          <param name="feather">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="blurtype">
+            <integer value="1"/>
+          </param>
+          <param name="winding_style">
+            <integer value="0"/>
+          </param>
+          <param name="vector_list">
+            <dynamic_list type="vector">
+              <entry>
+                <vector guid="2EB1856FC81D5E46331C24BF3CA5FBF3">
+                  <x>-0.8000000119</x>
+                  <y>-0.1000000015</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="50D405FCA6031011070688DD35B710E2">
+                  <x>-0.6000000238</x>
+                  <y>-0.1000000015</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="473FB7BEB31D6FFF5B1C00D320D30EFC">
+                  <x>-0.6000000238</x>
+                  <y>-0.4000000060</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="174B89FEE85AD08D8874C1D25A504B77">
+                  <x>-0.4000000060</x>
+                  <y>-0.4000000060</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="10BBD58F7A9D3097D1F4C0E21CFC93F3">
+                  <x>-0.4000000060</x>
+                  <y>-0.2000000030</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="BA856D3E46289953958C9B4B1447BAD7">
+                  <x>-0.1000000015</x>
+                  <y>-0.5000000000</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="8B60DC6D6876D41523783D0C8A3E3430">
+                  <x>-0.4000000060</x>
+                  <y>-0.8000000119</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="2FB1016E4B0E228B99C3A90677B1C234">
+                  <x>-0.4000000060</x>
+                  <y>-0.6000000238</y>
+                </vector>
+              </entry>
+              <entry>
+                <vector guid="6A50D82B8666BF419C7D80B8D416E0BB">
+                  <x>-0.8000000119</x>
+                  <y>-0.6000000238</y>
+                </vector>
+              </entry>
+            </dynamic_list>
+          </param>
+        </layer>
+        <layer type="shade" active="true" exclude_from_rendering="false" version="0.2">
+          <param name="z_depth">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="amount">
+            <real value="0.4000000000"/>
+          </param>
+          <param name="blend_method">
+            <integer value="12" static="true"/>
+          </param>
+          <param name="color">
+            <color>
+              <r>1.000000</r>
+              <g>1.000000</g>
+              <b>1.000000</b>
+              <a>1.000000</a>
+            </color>
+          </param>
+          <param name="origin">
+            <vector>
+              <x>0.0000000000</x>
+              <y>0.0000000000</y>
+            </vector>
+          </param>
+          <param name="size">
+            <vector>
+              <x>0.1875000000</x>
+              <y>0.1875000000</y>
+            </vector>
+          </param>
+          <param name="type">
+            <integer value="3"/>
+          </param>
+          <param name="invert">
+            <bool value="false"/>
+          </param>
+        </layer>
+      </canvas>
+    </param>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
+    </param>
+    <param name="time_offset">
+      <time value="0s"/>
+    </param>
+    <param name="children_lock">
       <bool value="false"/>
     </param>
-    <param name="antialias">
-      <bool value="true"/>
-    </param>
-    <param name="feather">
+    <param name="outline_grow">
       <real value="0.0000000000"/>
     </param>
-    <param name="blurtype">
-      <integer value="1"/>
+    <param name="z_range">
+      <bool value="false" static="true"/>
     </param>
-    <param name="winding_style">
-      <integer value="0"/>
+    <param name="z_range_position">
+      <real value="0.0000000000"/>
     </param>
-    <param name="vector_list">
-      <dynamic_list type="vector">
-        <entry>
-          <vector>
-            <x>-0.8000000119</x>
-            <y>-0.1000000015</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.6000000238</x>
-            <y>-0.1000000015</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.6000000238</x>
-            <y>-0.4000000060</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.4000000060</x>
-            <y>-0.4000000060</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.4000000060</x>
-            <y>-0.2000000030</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.1000000015</x>
-            <y>-0.5000000000</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.4000000060</x>
-            <y>-0.8000000119</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.4000000060</x>
-            <y>-0.6000000238</y>
-          </vector>
-        </entry>
-        <entry>
-          <vector>
-            <x>-0.8000000119</x>
-            <y>-0.6000000238</y>
-          </vector>
-        </entry>
-      </dynamic_list>
+    <param name="z_range_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range_blur">
+      <real value="0.0000000000"/>
+    </param>
+  </layer>
+  <layer type="zoom" active="true" exclude_from_rendering="false" version="0.1">
+    <param name="amount">
+      <real value="-0.0984400728"/>
+    </param>
+    <param name="center">
+      <vector>
+        <x>0.0000000000</x>
+        <y>0.0000000000</y>
+      </vector>
     </param>
   </layer>
 </canvas>

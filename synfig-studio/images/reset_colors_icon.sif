@@ -1,14 +1,14 @@
-<?xml version="1.0"?>
-<canvas version="0.7" width="128" height="128" xres="2834.645691" yres="2834.645691" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="24.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas version="1.1" width="128" height="128" xres="2834.645691" yres="2834.645691" gamma-r="2.200000" gamma-g="2.200000" gamma-b="2.200000" view-box="-1.000000 1.000000 1.000000 -1.000000" antialias="1" fps="24.000" begin-time="0f" end-time="0f" bgcolor="0.500000 0.500000 0.500000 1.000000">
   <name>Synfig Studio Reset Colors Icon</name>
-  <desc>Placed in the Public Domain in 2008 by Carlos L&#xF3;pez (Genete)</desc>
+  <desc>Placed in the Public Domain in 2008 by Carlos López (Genete)</desc>
   <meta name="grid_show" content="0"/>
   <meta name="grid_size" content="0.125000 0.125000"/>
   <meta name="grid_snap" content="1"/>
   <meta name="guide_show" content="1"/>
   <meta name="guide_snap" content="0"/>
   <meta name="onion_skin" content="0"/>
-  <layer type="PasteCanvas" active="true" version="0.1">
+  <layer type="group" active="true" exclude_from_rendering="false" version="0.3">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -24,9 +24,31 @@
         <y>0.0000000000</y>
       </vector>
     </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <vector>
+            <x>0.0000000000</x>
+            <y>0.0000000000</y>
+          </vector>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
     <param name="canvas">
-      <canvas width="128" height="128">
-        <layer type="rectangle" active="true" version="0.2" desc="Rectangle2031">
+      <canvas>
+        <layer type="rectangle" active="true" exclude_from_rendering="false" version="0.2" desc="Rectangle2031">
           <param name="z_depth">
             <real value="0.0000000000"/>
           </param>
@@ -62,8 +84,20 @@
           <param name="invert">
             <bool value="false"/>
           </param>
+          <param name="feather_x">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="feather_y">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="bevel">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="bevCircle">
+            <bool value="true"/>
+          </param>
         </layer>
-        <layer type="shade" active="true" version="0.2">
+        <layer type="shade" active="true" exclude_from_rendering="false" version="0.2">
           <param name="z_depth">
             <real value="0.0000000000"/>
           </param>
@@ -102,8 +136,8 @@
         </layer>
       </canvas>
     </param>
-    <param name="zoom">
-      <real value="0.0000000000"/>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
     </param>
     <param name="time_offset">
       <time value="0s"/>
@@ -111,14 +145,23 @@
     <param name="children_lock">
       <bool value="false"/>
     </param>
-    <param name="focus">
-      <vector>
-        <x>0.0000000000</x>
-        <y>0.0000000000</y>
-      </vector>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range">
+      <bool value="false" static="true"/>
+    </param>
+    <param name="z_range_position">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range_blur">
+      <real value="0.0000000000"/>
     </param>
   </layer>
-  <layer type="PasteCanvas" active="true" version="0.1">
+  <layer type="group" active="true" exclude_from_rendering="false" version="0.3">
     <param name="z_depth">
       <real value="0.0000000000"/>
     </param>
@@ -134,9 +177,31 @@
         <y>0.0000000000</y>
       </vector>
     </param>
+    <param name="transformation">
+      <composite type="transformation">
+        <offset>
+          <vector>
+            <x>0.0000000000</x>
+            <y>0.0000000000</y>
+          </vector>
+        </offset>
+        <angle>
+          <angle value="0.000000"/>
+        </angle>
+        <skew_angle>
+          <angle value="0.000000"/>
+        </skew_angle>
+        <scale>
+          <vector>
+            <x>1.0000000000</x>
+            <y>1.0000000000</y>
+          </vector>
+        </scale>
+      </composite>
+    </param>
     <param name="canvas">
-      <canvas width="128" height="128">
-        <layer type="rectangle" active="true" version="0.2" desc="Rectangle2031">
+      <canvas>
+        <layer type="rectangle" active="true" exclude_from_rendering="false" version="0.2" desc="Rectangle2031">
           <param name="z_depth">
             <real value="0.0000000000"/>
           </param>
@@ -172,8 +237,20 @@
           <param name="invert">
             <bool value="false"/>
           </param>
+          <param name="feather_x">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="feather_y">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="bevel">
+            <real value="0.0000000000"/>
+          </param>
+          <param name="bevCircle">
+            <bool value="true"/>
+          </param>
         </layer>
-        <layer type="shade" active="true" version="0.2">
+        <layer type="shade" active="true" exclude_from_rendering="false" version="0.2">
           <param name="z_depth">
             <real value="0.0000000000"/>
           </param>
@@ -185,9 +262,9 @@
           </param>
           <param name="color">
             <color>
-              <r>0.000000</r>
-              <g>0.000000</g>
-              <b>0.000000</b>
+              <r>1.000000</r>
+              <g>1.000000</g>
+              <b>1.000000</b>
               <a>1.000000</a>
             </color>
           </param>
@@ -212,8 +289,8 @@
         </layer>
       </canvas>
     </param>
-    <param name="zoom">
-      <real value="0.0000000000"/>
+    <param name="time_dilation">
+      <real value="1.0000000000"/>
     </param>
     <param name="time_offset">
       <time value="0s"/>
@@ -221,14 +298,23 @@
     <param name="children_lock">
       <bool value="false"/>
     </param>
-    <param name="focus">
-      <vector>
-        <x>0.0000000000</x>
-        <y>0.0000000000</y>
-      </vector>
+    <param name="outline_grow">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range">
+      <bool value="false" static="true"/>
+    </param>
+    <param name="z_range_position">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range_depth">
+      <real value="0.0000000000"/>
+    </param>
+    <param name="z_range_blur">
+      <real value="0.0000000000"/>
     </param>
   </layer>
-  <layer type="zoom" active="true" version="0.1">
+  <layer type="zoom" active="true" exclude_from_rendering="false" version="0.1">
     <param name="amount">
       <real value="0.2000000000"/>
     </param>

@@ -5,11 +5,11 @@
   <launchable type="desktop-id">org.synfig.SynfigStudio.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
-  <name>Synfig Studio</name>
+  <name>Synfig Studio (Morevna Edition)</name>
   <summary>Create and edit 2D animations and compositions</summary>
   <description>
     <_p>
-   Synfig Studio is a free and open-source 2D animation software, designed as powerful industrial-strength solution for creating film-quality animation using a vector and bitmap artwork. It eliminates the need to create animation frame-by frame, allowing you to produce 2D animation of a higher quality with fewer people and resources. 
+   Synfig Studio (Morevna Edition) is a free and open-source 2D animation software, designed as powerful industrial-strength solution for creating film-quality animation using a vector and bitmap artwork. It eliminates the need to create animation frame-by frame, allowing you to produce 2D animation of a higher quality with fewer people and resources. 
   </_p>
     <_p>Features:</_p>
     <ul>
@@ -31,8 +31,8 @@
       <_caption>Synfig Studio workspace</_caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://www.synfig.org</url>
-  <update_contact>contact_at_synfig.org</update_contact>
+  <url type="homepage">https://synfig.ru</url>
+  <update_contact>contact_at_synfig.ru</update_contact>
   <keywords>
     <keyword>2D</keyword>
     <keyword>Vector</keyword>
@@ -48,10 +48,10 @@
     <keyword>ToonBoom</keyword>
   </keywords>
 
-  <developer_name>Synfig</developer_name>
-  <url type="bugtracker">https://github.com/synfig/synfig/issues</url>
-  <url type="donation">https://www.synfig.org/donate/</url>
-  <url type="help">https://wiki.synfig.org/Category:Manual</url>
+  <developer_name>ANO "Morevna Project" OATDC</developer_name>
+  <url type="bugtracker">https://tvoygit.ru/morevnaproject/synfig/issues</url>
+  <url type="donation">https://morevnaproject.ru/donate/synfig/</url>
+  <url type="help">https://docs.synfig.ru/</url>
   <url type="translate">https://www.transifex.com/morevnaproject/synfig/</url>
   <content_rating type="oars-1.1"/>
   <releases>

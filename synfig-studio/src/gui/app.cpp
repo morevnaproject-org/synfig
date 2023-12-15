@@ -309,7 +309,7 @@ std::list< etl::handle< studio::Module > > module_list_;
 bool   studio::App::restrict_radius_ducks        = true;
 bool   studio::App::resize_imported_images       = false;
 bool   studio::App::enable_experimental_features = false;
-bool   studio::App::use_dark_theme               = false;
+bool   studio::App::use_dark_theme               = true;
 bool   studio::App::show_file_toolbar            = true;
 String studio::App::custom_filename_prefix       (DEFAULT_FILENAME_PREFIX);
 int    studio::App::preferred_x_size             = 480;
@@ -1066,9 +1066,6 @@ DEFINE_ACTION("panel-soundwave",       _("Sound"));
 
 // actions in Help menu
 DEFINE_ACTION("help",           Gtk::Stock::HELP);
-DEFINE_ACTION("help-tutorials", Gtk::Stock::HELP);
-DEFINE_ACTION("help-reference", Gtk::Stock::HELP);
-DEFINE_ACTION("help-faq",       Gtk::Stock::HELP);
 DEFINE_ACTION("help-support",   Gtk::Stock::HELP);
 DEFINE_ACTION("help-about",     Gtk::StockID("synfig-about"));
 
@@ -1229,11 +1226,6 @@ DEFINE_ACTION("keyframe-properties", _("Properties"));
 "	</menu>"
 "	<menu action='menu-help'>"
 "		<menuitem action='help'/>"
-"		<separator name='sep-help1'/>"
-"		<menuitem action='help-tutorials'/>"
-"		<menuitem action='help-reference'/>"
-"		<menuitem action='help-faq'/>"
-"		<separator name='sep-help2'/>"
 "		<menuitem action='help-support'/>"
 "		<separator name='sep-help3'/>"
 "		<menuitem action='help-about'/>"
@@ -1493,12 +1485,12 @@ App::App(const synfig::String& basepath, int *argc, char ***argv):
 			"different version of libsynfig than what is currently "
 			"installed. Synfig Studio will now abort. Try downloading "
 			"the latest version from the Synfig website at "
-			"https://www.synfig.org/download-development/"),
+			"https://www.synfig.ru/"),
 			_("Close"));
 
 		throw 40;
 	}
-	Glib::set_application_name(_("Synfig Studio"));
+	Glib::set_application_name(_("Synfig Studio (Morevna Edition)"));
 
 	Splash splash_screen;
 	splash_screen.show();
@@ -1697,7 +1689,7 @@ App::App(const synfig::String& basepath, int *argc, char ***argv):
 
 		/* other */
 		state_manager->add_state(&state_text);
-		if(!getenv("SYNFIG_DISABLE_SKETCH" )) state_manager->add_state(&state_sketch);
+		//if(!getenv("SYNFIG_DISABLE_SKETCH" )) state_manager->add_state(&state_sketch);
 		if(!getenv("SYNFIG_DISABLE_BRUSH"  ) && App::enable_experimental_features) state_manager->add_state(&state_brush);
 		state_manager->add_state(&state_zoom);
 
@@ -2033,7 +2025,7 @@ App::save_settings()
 			for(iter=recent_files.rbegin();iter!=recent_files.rend();iter++)
 				file<<(*iter).c_str()<<endl;
 		}while(0);
-		std::string filename=get_config_file("settings-1.4");
+		std::string filename=get_config_file("settings-1.4-me");
 		synfigapp::Main::settings().save_to_file(filename);
 
 		{
@@ -2054,7 +2046,7 @@ App::load_settings(const synfig::String& key_filter)
 	try
 	{
 		synfig::ChangeLocale change_locale(LC_NUMERIC, "C");
-		std::string filename=get_config_file("settings-1.4");
+		std::string filename=get_config_file("settings-1.4-me");
 		ret=synfigapp::Main::settings().load_from_file(filename, key_filter);
 	}
 	catch(...)
@@ -3586,10 +3578,10 @@ try_open_uri(const std::string &uri)
 void
 App::dialog_help()
 {
-	if (!try_open_uri("https://synfig.readthedocs.io/en/latest/index.html"))
+	if (!try_open_uri(_("https://docs.synfig.ru/")))
 	{
 		Gtk::MessageDialog dialog(*App::main_window, _("Documentation"), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_CLOSE, true);
-		dialog.set_secondary_text(_("Documentation for Synfig Studio is available on the website:\n\nhttps://synfig.readthedocs.io/en/latest/index.html"));
+		dialog.set_secondary_text(_("Documentation for Synfig Studio is available on the website:\n\nhttps://docs.synfig.ru/"));
 		dialog.set_title(_("Help"));
 		dialog.run();
 	}

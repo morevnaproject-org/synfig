@@ -84,10 +84,10 @@ About::About()
 	set_version(VERSION);
 	set_comments(_("2D vector animation studio"));
 
-	set_website("https://synfig.org/");
+	set_website("https://synfig.ru/");
 	set_website_label(_("Visit the Synfig website"));
 
-	set_copyright(_("Copyright (c) 2001-2022\nSynfig developers & contributors"));
+	set_copyright(_("Copyright (c) 2021-2023\nANO \"Morevna Project\" OATDC\nCopyright (c) 2001-2023\nSynfig developers & contributors"));
 	Glib::ustring license =
 		"This program is free software; you can redistribute it and/or modify "
 		"it under the terms of the GNU General Public License as published by "
@@ -163,7 +163,7 @@ About::About()
 		{"Ivan Mahonin (blackwarthog)"},
 		{"Jerome Blanchi (d.j.a.y.)"},
 		{"Keyikedalube Ndang"},
-		{"Konstantin Dmitriev (zelgadis)"},
+		{"Konstantin Dmitriev (morevnaproject)"},
 		{"Kristi Isakog"},
 		{"lenixlobo"},
 		{"Luka Pravica"},

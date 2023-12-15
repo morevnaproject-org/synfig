@@ -907,10 +907,14 @@ msgstr "Посетите сайт Synfig"
 
 #: ../src/gui/dialogs/about.cpp:90
 msgid ""
-"Copyright (c) 2001-2022\n"
+"Copyright (c) 2021-2023\n"
+"ANO \"Morevna Project\" OATDC\n"
+"Copyright (c) 2001-2023\n"
 "Synfig developers & contributors"
 msgstr ""
-"Copyright (c) 2001-2022\n"
+"Copyright (c) 2021-2023\n"
+"АНО ЦРОАТ \"Проект Моревна\"\n"
+"Copyright (c) 2001-2023\n"
 "Разработчики и сообщество Synfig"
 
 #: ../src/gui/dialogs/about.cpp:109
