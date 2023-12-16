@@ -293,7 +293,7 @@ mkdmg()
 	#echo Synfig version is: $VERSION
 
 	ARCH=`uname -m`
-	export FINAL_FILENAME=SynfigStudio-"$VERSION"
+	export FINAL_FILENAME=SynfigStudio-ME-"$VERSION"
 
 
 	VOLNAME="SynfigStudio"
