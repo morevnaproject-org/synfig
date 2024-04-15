@@ -266,11 +266,6 @@ StateGradient_Context::load_settings()
 		else
 			set_id("Gradient");
 
-		if(settings.get_value("gradient.layer_linear_gradient",value) && value=="0")
-			set_layer_linear_gradient_flag(false);
-		else
-			set_layer_linear_gradient_flag(true);
-
 		if(settings.get_value("gradient.layer_radial_gradient",value) && value=="0")
 			set_layer_radial_gradient_flag(false);
 		else
@@ -285,6 +280,11 @@ StateGradient_Context::load_settings()
 			set_layer_spiral_gradient_flag(false);
 		else
 			set_layer_spiral_gradient_flag(true);
+
+        if(settings.get_value("gradient.layer_linear_gradient",value) && value=="0")
+            set_layer_linear_gradient_flag(false);
+        else
+            set_layer_linear_gradient_flag(true);
 
 		if(settings.get_value("gradient.blend",value))
 			set_blend(atoi(value.c_str()));
