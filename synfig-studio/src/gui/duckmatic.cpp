@@ -610,11 +610,16 @@ Duckmatic::update_ducks()
 			{
 				synfig::Real radius = 0.0;
 				synfig::Point point(0.0, 0.0);
-				ValueNode_BLine::Handle bline(ValueNode_BLine::Handle::cast_dynamic(bline_vertex->get_link("bline")));
-				Real amount = synfig::find_closest_point((*bline)(time), duck->get_point(), radius, bline->get_loop(), &point);
+				bool bline_loop = false;
+				ValueNode::LooseHandle bline = bline_vertex->get_bline_handle(bline_loop);
+				if (!bline) {
+					warning(_("Internal error: duckmatic: It is a BLine Vertex, but it has not a BLine link"));
+					return;
+				}
+				Real amount = synfig::find_closest_point((*bline)(time), duck->get_point(), radius, bline_loop, &point);
 				bool homogeneous((*(bline_vertex->get_link("homogeneous")))(time).get(bool()));
 				if(homogeneous)
-					amount=std_to_hom((*bline)(time), amount, ((*(bline_vertex->get_link("loop")))(time).get(bool())), bline->get_loop() );
+					amount=std_to_hom((*bline)(time), amount, ((*(bline_vertex->get_link("loop")))(time).get(bool())), bline_loop );
 				ValueNode::Handle vertex_amount_value_node(bline_vertex->get_link("amount"));
 				duck->set_point(point);
 
@@ -818,35 +823,35 @@ Duckmatic::set_guides_color(const synfig::Color &c)
 Duckmatic::GuideList::iterator
 Duckmatic::find_guide_x(synfig::Point pos, float radius)
 {
-    GuideList::iterator iter,best(guide_list_x_.end());
-    float dist(radius);
-    for(iter=guide_list_x_.begin();iter!=guide_list_x_.end();++iter)
-    {
-        float amount(abs(*iter-pos[0]));
-        if(amount<dist)
-        {
-            dist=amount;
-            best=iter;
-        }
-    }
-    return best;
+	GuideList::iterator iter,best(guide_list_x_.end());
+	float dist(radius);
+	for(iter=guide_list_x_.begin();iter!=guide_list_x_.end();++iter)
+	{
+		float amount(std::fabs(*iter-pos[0]));
+		if(amount<dist)
+		{
+			dist=amount;
+			best=iter;
+		}
+	}
+	return best;
 }
 
 Duckmatic::GuideList::iterator
 Duckmatic::find_guide_y(synfig::Point pos, float radius)
 {
-    GuideList::iterator iter,best(guide_list_y_.end());
-    float dist(radius);
-    for(iter=guide_list_y_.begin();iter!=guide_list_y_.end();++iter)
-    {
-        float amount(abs(*iter-pos[1]));
-        if(amount<=dist)
-        {
-            dist=amount;
-            best=iter;
-        }
-    }
-    return best;
+	GuideList::iterator iter,best(guide_list_y_.end());
+	float dist(radius);
+	for(iter=guide_list_y_.begin();iter!=guide_list_y_.end();++iter)
+	{
+		float amount(std::fabs(*iter-pos[1]));
+		if(amount<=dist)
+		{
+			dist=amount;
+			best=iter;
+		}
+	}
+	return best;
 }
 
 Point
@@ -872,9 +877,9 @@ Duckmatic::snap_point_to_grid(const synfig::Point& x)const
 			floor(ret[0]/get_grid_size()[0]+0.5)*get_grid_size()[0],
 			floor(ret[1]/get_grid_size()[1]+0.5)*get_grid_size()[1]);
 
-		if(abs(snap[0]-ret[0])<=radius && (!has_guide_x || abs(snap[0]-ret[0])<=abs(*guide_x-ret[0])))
+		if(std::fabs(snap[0]-ret[0])<=radius && (!has_guide_x || std::fabs(snap[0]-ret[0])<=std::fabs(*guide_x-ret[0])))
 			ret[0]=snap[0],has_guide_x=false;
-		if(abs(snap[1]-ret[1])<=radius && (!has_guide_y || abs(snap[1]-ret[1])<=abs(*guide_y-ret[1])))
+		if(std::fabs(snap[1]-ret[1])<=radius && (!has_guide_y || std::fabs(snap[1]-ret[1])<=std::fabs(*guide_y-ret[1])))
 			ret[1]=snap[1],has_guide_y=false;
 	}
 
@@ -889,7 +894,7 @@ Duckmatic::snap_point_to_grid(const synfig::Point& x)const
 	if(axis_lock)
 	{
 		ret-=drag_offset_;
-		if(abs(ret[0])<abs(ret[1]))
+		if(std::fabs(ret[0])<std::fabs(ret[1]))
 			ret[0]=0;
 		else
 			ret[1]=0;

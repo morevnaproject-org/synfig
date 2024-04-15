@@ -80,6 +80,10 @@ static synfig::Distance bline_width_;
 //static Color::BlendMethod blend_method_;
 //static Real opacity_;
 
+// Settings should be initialized before input_devices_ because
+// input_devices_ uses `Main::settings()` to store settings
+static trivial<Settings> settings_;
+
 static synfigapp::InputDevice::Handle selected_input_device_;
 static list<synfigapp::InputDevice::Handle> input_devices_;
 
@@ -90,8 +94,6 @@ trivial<sigc::signal<void> > signal_bline_width_changed_;
 //trivial<sigc::signal<void> > signal_blend_method_changed_;
 //trivial<sigc::signal<void> > signal_opacity_changed_;
 trivial<sigc::signal<void> > signal_interpolation_changed_;
-
-trivial<Settings> settings_;
 
 static synfig::Waypoint::Interpolation interpolation_;
 
@@ -386,7 +388,7 @@ synfigapp::Main::find_input_device(const synfig::String id)
 	for(iter=input_devices_.begin();iter!=input_devices_.end();++iter)
 		if((*iter)->get_id()==id)
 			return *iter;
-	return 0;
+	return nullptr;
 }
 
 InputDevice::Handle
@@ -394,9 +396,9 @@ synfigapp::Main::select_input_device(const synfig::String id)
 {
 	InputDevice::Handle input_device(find_input_device(id));
 	if(!input_device)
-		return 0;
+		return nullptr;
 	if(!select_input_device(input_device))
-		return 0;
+		return nullptr;
 	return input_device;
 }
 

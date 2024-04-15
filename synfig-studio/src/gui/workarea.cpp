@@ -1025,7 +1025,7 @@ WorkArea::on_drawing_area_event(GdkEvent *event)
 	SYNFIG_EXCEPTION_GUARD_BEGIN()
 	synfig::Point mouse_pos;
     float bezier_click_pos(0);
-	const float radius((abs(pw)+abs(ph))*4);
+	const float radius((std::fabs(pw)+std::fabs(ph))*4);
 	int button_pressed(0);
 	float pressure(0);
 	Gdk::ModifierType modifier(Gdk::ModifierType(0));
@@ -1033,7 +1033,7 @@ WorkArea::on_drawing_area_event(GdkEvent *event)
 	// Handle input stuff
 	if (event->any.type==GDK_MOTION_NOTIFY)
 	{
-		GdkDevice *device = event->motion.device;
+		GdkDevice *device = gdk_event_get_source_device(event);
 		modifier = Gdk::ModifierType(event->motion.state);
 
 		// Calculate the position of the
@@ -1098,7 +1098,7 @@ WorkArea::on_drawing_area_event(GdkEvent *event)
 		event->any.type==GDK_3BUTTON_PRESS ||
 		event->any.type==GDK_BUTTON_RELEASE )
 	{
-		GdkDevice *device = event->button.device;
+		GdkDevice *device = gdk_event_get_source_device(event);
 		modifier = Gdk::ModifierType(event->button.state);
 		drawing_area->grab_focus();
 
