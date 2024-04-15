@@ -161,6 +161,7 @@
 
 #include "gui/resourcehelper.h"
 #include "gui/workspacehandler.h"
+#include "gui/workarea.h"
 
 #endif
 
@@ -312,8 +313,8 @@ bool   studio::App::enable_experimental_features = false;
 bool   studio::App::use_dark_theme               = true;
 bool   studio::App::show_file_toolbar            = true;
 String studio::App::custom_filename_prefix       (DEFAULT_FILENAME_PREFIX);
-int    studio::App::preferred_x_size             = 480;
-int    studio::App::preferred_y_size             = 270;
+int    studio::App::preferred_x_size             = 1280;
+int    studio::App::preferred_y_size             = 720;
 String studio::App::predefined_size              (DEFAULT_PREDEFINED_SIZE);
 String studio::App::predefined_fps               (DEFAULT_PREDEFINED_FPS);
 float  studio::App::preferred_fps                = 24.0;
@@ -1771,6 +1772,7 @@ App::App(const synfig::String& basepath, int *argc, char ***argv):
 		dock_manager->show_all_dock_dialogs();
 
 		main_window->present();
+		App::get_selected_canvas_view()->get_work_area()->zoom_fit();
 		dock_toolbox->present();
 
 		splash_screen.hide();
@@ -2308,8 +2310,8 @@ App::restore_default_settings()
 	synfigapp::Main::settings().set_value("pref.enable_experimental_features",   "0");
 	synfigapp::Main::settings().set_value("pref.custom_filename_prefix",         DEFAULT_FILENAME_PREFIX);
 	synfigapp::Main::settings().set_value("pref.ui_language",                    "os_LANG");
-	synfigapp::Main::settings().set_value("pref.preferred_x_size",               "480");
-	synfigapp::Main::settings().set_value("pref.preferred_y_size",               "270");
+	synfigapp::Main::settings().set_value("pref.preferred_x_size",               "1280");
+	synfigapp::Main::settings().set_value("pref.preferred_y_size",               "720");
 	synfigapp::Main::settings().set_value("pref.predefined_size",                DEFAULT_PREDEFINED_SIZE);
 	synfigapp::Main::settings().set_value("pref.preferred_fps",                  "24.0");
 	synfigapp::Main::settings().set_value("pref.predefined_fps",                 DEFAULT_PREDEFINED_FPS);
