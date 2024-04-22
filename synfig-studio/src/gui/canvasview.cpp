@@ -1257,6 +1257,7 @@ CanvasView::create_display_bar()
 	displaybar->append( *create_tool_separator() );
 
 	{ // Setup refresh button
+		/*
 		Gtk::Image *icon = Gtk::manage(new Gtk::Image(Gtk::StockID("gtk-refresh"), iconsize));
 		icon->set_padding(0, 0);
 		icon->show();
@@ -1269,6 +1270,7 @@ CanvasView::create_display_bar()
 		refreshbutton->show();
 
 		displaybar->append(*refreshbutton);
+		*/
 	}
 
 	{ // Setup draft rendering mode button
