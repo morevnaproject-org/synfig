@@ -450,10 +450,10 @@ StateDraw_Context::load_settings()
 		else
 			set_layer_outline_flag(true);
 
-		if(settings.get_value("draw.advanced_outline",value) && value=="0")
-			set_layer_advanced_outline_flag(false);
-		else
+		if(settings.get_value("draw.advanced_outline",value) && value=="1")
 			set_layer_advanced_outline_flag(true);
+		else
+			set_layer_advanced_outline_flag(false);
 
 		if(settings.get_value("draw.auto_export",value) && value=="1")
 			set_auto_export_flag(true);
