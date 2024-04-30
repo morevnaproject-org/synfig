@@ -20,7 +20,7 @@ git add \
 	# end
 
 git commit -m "Release version ${VERSION_CURRENT}"
-git push upstream testing
+git push main main
 
-git tag v${VERSION_CURRENT}
-git push --tags upstream
+git tag me-v${VERSION_CURRENT}
+git push --tags main
