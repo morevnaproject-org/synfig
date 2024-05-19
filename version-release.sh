@@ -22,5 +22,6 @@ git add \
 git commit -m "Release version ${VERSION_CURRENT}"
 git push main main
 
-git tag me-v${VERSION_CURRENT}
-git push --tags main
+git tag -d "me-v${VERSION_CURRENT}" || true
+git tag "me-v${VERSION_CURRENT}"
+git push main tag "me-v${VERSION_CURRENT}" --force
