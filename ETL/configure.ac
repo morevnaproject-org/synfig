@@ -2,7 +2,7 @@
 
 # -- I N I T --------------------------------------------------
 AC_PREREQ(2.60)
-AC_INIT([Extended Template Library],[1.4.5.0],[https://github.com/synfig/synfig/issues],[ETL])
+AC_INIT([Extended Template Library],[1.4.5.1],[https://github.com/synfig/synfig/issues],[ETL])
 AC_REVISION
 
 AC_CONFIG_AUX_DIR(config)
