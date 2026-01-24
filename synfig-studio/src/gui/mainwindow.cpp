@@ -45,6 +45,9 @@
 
 #include <gtkmm/menubar.h>
 #include <gtkmm/box.h>
+#include <gtkmm/stylecontext.h>
+#include <gtkmm/menubar.h>
+#include <gtkmm/menuitem.h>
 
 #include <gtkmm/textview.h>
 
@@ -52,6 +55,9 @@
 #include "gui/widgets/widget_vector.h"
 
 #include <gui/exception_guard.h>
+#ifdef ENABLE_UPDATE_CHECKER
+#include <gui/updatechecker.h>
+#endif
 
 #endif
 
@@ -80,6 +86,9 @@ using namespace studio;
 
 MainWindow::MainWindow() :
 	save_workspace_merge_id(0), custom_workspaces_merge_id(0)
+#ifdef ENABLE_UPDATE_CHECKER
+	  , update_menu_item_(nullptr)
+#endif
 {
 	register_custom_widget_types();
 
@@ -251,6 +260,82 @@ MainWindow::toggle_show_toolbar()
 	if (etl::loose_handle<CanvasView> canvas_view = App::get_selected_canvas_view())
 		canvas_view->toggle_show_toolbar();
 }
+
+#ifdef ENABLE_UPDATE_CHECKER
+void
+MainWindow::on_update_notification_clicked()
+{
+	if (update_landing_url_.empty())
+		return;
+
+	const std::string message = update_remote_version_.empty()
+		? _("A new version of Synfig Studio is available.")
+		: synfig::strprintf(_("A new version of Synfig Studio is available: %s"), update_remote_version_.c_str());
+
+	Gtk::MessageDialog dialog(
+		*this,
+		message,
+		false,
+		Gtk::MESSAGE_INFO,
+		Gtk::BUTTONS_NONE,
+		true);
+
+	dialog.get_action_area()->set_layout(Gtk::BUTTONBOX_SPREAD);
+
+	dialog.set_title(_("Update"));
+
+	dialog.add_button(_("Download new version"), 1);
+	dialog.add_button(_("Disable update check"), 2);
+	dialog.add_button(_("Skip this update"), 0);
+
+	const int response = dialog.run();
+
+	if (response == 2) {
+		App::enable_update_check = false;
+		App::update_check_consent = update_checker::UPDATE_CHECK_CONSENT_DENIED;
+		App::save_settings();
+		if (update_menu_item_)
+			update_menu_item_->hide();
+	}
+
+	if (response == 0) {
+		App::skipped_update_version = update_remote_version_;
+		App::save_settings();
+		if (update_menu_item_)
+			update_menu_item_->hide();
+	}
+
+	if (response == 1)
+		App::open_uri(update_landing_url_);
+}
+
+void
+MainWindow::show_update_notification(const std::string& url, const std::string& version_text)
+{
+	update_landing_url_ = url;
+	update_remote_version_ = version_text;
+	const std::string label = version_text.empty()
+			? _("Update available")
+			: synfig::strprintf("%s (%s)", _("Update available"), version_text.c_str());
+	
+	if (!update_menu_item_) {
+		auto menubar_widget = App::ui_manager()->get_widget("/menubar-main");
+		auto menubar = dynamic_cast<Gtk::MenuBar*>(menubar_widget);
+		if (!menubar)
+			return;
+
+		update_menu_item_ = Gtk::manage(new Gtk::MenuItem(label, false));
+		update_menu_item_->get_style_context()->add_class("update-available");
+		update_menu_item_->signal_button_release_event().connect(
+			sigc::hide(sigc::bind_return(sigc::mem_fun(*this, &MainWindow::on_update_notification_clicked), true)));
+		menubar->append(*update_menu_item_);
+		update_menu_item_->show();
+	} else {
+		update_menu_item_->set_label(label);
+		update_menu_item_->show();
+	}
+}
+#endif // ENABLE_UPDATE_CHECKER
 
 void MainWindow::add_custom_workspace_menu_item_handlers()
 {

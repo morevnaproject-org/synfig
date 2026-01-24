@@ -145,6 +145,9 @@ class Dialog_Setup : public Dialog_Template
 	Gtk::Switch toggle_enable_experimental_features;
 	Gtk::Switch toggle_use_dark_theme;
 	Gtk::Switch toggle_show_file_toolbar;
+#ifdef ENABLE_UPDATE_CHECKER
+	Gtk::Switch toggle_enable_update_check;
+#endif
 
 	Gtk::Entry textbox_brushe_path;
 	Gtk::ListViewText* listviewtext_brushes_path;

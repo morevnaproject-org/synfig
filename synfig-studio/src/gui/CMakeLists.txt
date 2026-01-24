@@ -79,6 +79,11 @@ target_link_libraries(synfigstudio
     synfigapp
 )
 
+if (ENABLE_UPDATE_CHECKER)
+	target_compile_definitions(synfigstudio PRIVATE ENABLE_UPDATE_CHECKER)
+	target_sources(synfigstudio PRIVATE "${CMAKE_CURRENT_LIST_DIR}/updatechecker.cpp")
+endif ()
+
 install(
     TARGETS synfigstudio
     DESTINATION bin

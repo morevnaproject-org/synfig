@@ -34,6 +34,10 @@
 #include <gtkmm/actiongroup.h>
 #include <gtkmm/toggleaction.h>
 
+#include <string>
+
+namespace Gtk { class MenuItem; }
+
 /* === M A C R O S ========================================================= */
 
 /* === T Y P E D E F S ===================================================== */
@@ -50,6 +54,11 @@ namespace studio {
 		Gtk::Bin *bin_;
 		DockBook *main_dock_book_;
 		Glib::RefPtr<Gtk::ActionGroup> window_action_group;
+#ifdef ENABLE_UPDATE_CHECKER
+		Gtk::MenuItem* update_menu_item_;
+		std::string update_landing_url_;
+		std::string update_remote_version_;
+#endif
 
 		//! Constructor Helper - Initializes all of the menus
 		void init_menus();
@@ -64,6 +73,9 @@ namespace studio {
 		void on_dockable_unregistered(Dockable* dockable);
 		void toggle_show_menubar();
 		void toggle_show_toolbar();
+#ifdef ENABLE_UPDATE_CHECKER
+		void on_update_notification_clicked();
+#endif
 
 		guint save_workspace_merge_id;
 		guint custom_workspaces_merge_id;
@@ -77,6 +89,10 @@ namespace studio {
 	public:
 		MainWindow();
 		virtual ~MainWindow();
+
+#ifdef ENABLE_UPDATE_CHECKER
+		void show_update_notification(const std::string& url, const std::string& version_text);
+#endif
 
 		Gtk::Bin& root() { return *bin_; }
 		const Gtk::Bin& root() const { return *bin_; }

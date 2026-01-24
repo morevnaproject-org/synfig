@@ -116,6 +116,12 @@ synfigstudio_SOURCES = \
 	$(OTHER_HH) \
 	$(OTHER_CC)
 
+if ENABLE_UPDATE_CHECKER
+synfigstudio_SOURCES += \
+	updatechecker.h \
+	updatechecker.cpp
+endif
+
 
 
 synfigstudio_LDADD = \
