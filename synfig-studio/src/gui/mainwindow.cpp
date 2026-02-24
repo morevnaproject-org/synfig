@@ -57,6 +57,7 @@
 #include <gui/exception_guard.h>
 #ifdef ENABLE_UPDATE_CHECKER
 #include <gui/updatechecker.h>
+#include <gtkmm/messagedialog.h>
 #endif
 
 #endif
@@ -270,7 +271,7 @@ MainWindow::on_update_notification_clicked()
 
 	const std::string message = update_remote_version_.empty()
 		? _("A new version of Synfig Studio is available.")
-		: synfig::strprintf(_("A new version of Synfig Studio is available: %s"), update_remote_version_.c_str());
+		: etl::strprintf(_("A new version of Synfig Studio is available: %s"), update_remote_version_.c_str());
 
 	Gtk::MessageDialog dialog(
 		*this,
@@ -316,7 +317,7 @@ MainWindow::show_update_notification(const std::string& url, const std::string& 
 	update_remote_version_ = version_text;
 	const std::string label = version_text.empty()
 			? _("Update available")
-			: synfig::strprintf("%s (%s)", _("Update available"), version_text.c_str());
+			: etl::strprintf("%s (%s)", _("Update available"), version_text.c_str());
 	
 	if (!update_menu_item_) {
 		auto menubar_widget = App::ui_manager()->get_widget("/menubar-main");
