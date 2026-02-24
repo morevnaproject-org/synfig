@@ -2429,6 +2429,11 @@ App::apply_gtk_settings()
 	data += "button > box { padding: 5px; }\n";
 	data += "button > image { padding: 5px; }\n";
 	data += "combobox > box > button > box { padding-top: 0px; padding-bottom: 0px; }\n";
+
+	// Highlight update notification menu item
+	data += "menuitem.update-available * { color: #1f1f1f; }\n";
+	data += "menuitem.update-available, menuitem.update-available:hover, menuitem.update-available:active { background: #ffd666; color: #1f1f1f; }\n";
+
 	// Fix #810: Insetsetive context menus on OSX
 	g_object_get (G_OBJECT (gtk_settings), "gtk-theme-name", &theme_name, NULL);
 	if ( String(theme_name) == "Adwaita" )
