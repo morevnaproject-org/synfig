@@ -57,6 +57,9 @@
 #include <gtkmm/stockitem.h>
 #include <gtkmm/textview.h>
 #include <gtkmm/uimanager.h>
+#ifdef ENABLE_UPDATE_CHECKER
+#include <gui/updatechecker.h>
+#endif
 
 #include <glibmm/main.h>
 #include <glibmm/miscutils.h>
@@ -312,6 +315,11 @@ bool   studio::App::resize_imported_images       = false;
 bool   studio::App::enable_experimental_features = false;
 bool   studio::App::use_dark_theme               = true;
 bool   studio::App::show_file_toolbar            = true;
+#ifdef ENABLE_UPDATE_CHECKER
+bool   studio::App::enable_update_check          = false;
+int    studio::App::update_check_consent         = update_checker::UPDATE_CHECK_CONSENT_UNKNOWN;
+String studio::App::skipped_update_version        ;
+#endif
 String studio::App::custom_filename_prefix       (DEFAULT_FILENAME_PREFIX);
 int    studio::App::preferred_x_size             = 1280;
 int    studio::App::preferred_y_size             = 720;
@@ -577,6 +585,23 @@ public:
 				value=strprintf("%i",(int)App::show_file_toolbar);
 				return true;
 			}
+#ifdef ENABLE_UPDATE_CHECKER
+			if(key=="enable_update_check")
+			{
+				value=strprintf("%i", (int)App::enable_update_check);
+				return true;
+			}
+			if(key=="update_check_consent")
+			{
+				value=strprintf("%i", App::update_check_consent);
+				return true;
+			}
+			if(key=="skipped_update_version")
+			{
+				value=App::skipped_update_version;
+				return true;
+			}
+#endif
 			//! "Keep brushes_path" preferences entry for backward compatibility (15/12 - v1.0.3)
 			//! Now brush path(s) are hold by input preferences : brush.path_count & brush.path_%d
 			if(key=="brushes_path")
@@ -753,6 +778,25 @@ public:
 				App::show_file_toolbar=i;
 				return true;
 			}
+#ifdef ENABLE_UPDATE_CHECKER
+			if(key=="enable_update_check")
+			{
+				int i(atoi(value.c_str()));
+				App::enable_update_check = i;
+				return true;
+			}
+			if(key=="update_check_consent")
+			{
+				int i(atoi(value.c_str()));
+				App::update_check_consent = i;
+				return true;
+			}
+			if(key=="skipped_update_version")
+			{
+				App::skipped_update_version=value;
+				return true;
+			}
+#endif
 			//! "Keep brushes_path" preferences entry for backward compatibility (15/12 - v1.0.3)
 			//! Now brush path(s) are hold by input preferences : brush.path_count & brush.path_%d
 			if(key=="brushes_path")
@@ -876,6 +920,11 @@ public:
 		ret.push_back("enable_experimental_features");
 		ret.push_back("use_dark_theme");
 		ret.push_back("show_file_toolbar");
+#ifdef ENABLE_UPDATE_CHECKER
+		ret.push_back("enable_update_check");
+		ret.push_back("update_check_consent");
+		ret.push_back("skipped_update_version");
+#endif
 		ret.push_back("brushes_path");
 		ret.push_back("custom_filename_prefix");
 		ret.push_back("ui_language");
@@ -1777,6 +1826,10 @@ App::App(const synfig::String& basepath, int *argc, char ***argv):
 
 		splash_screen.hide();
 
+#ifdef ENABLE_UPDATE_CHECKER
+		update_checker::start_async();
+#endif
+
 		String message;
 		String details;
 		/*
@@ -2376,6 +2429,11 @@ App::apply_gtk_settings()
 	data += "button > box { padding: 5px; }\n";
 	data += "button > image { padding: 5px; }\n";
 	data += "combobox > box > button > box { padding-top: 0px; padding-bottom: 0px; }\n";
+
+	// Highlight update notification menu item
+	data += "menuitem.update-available * { color: #1f1f1f; }\n";
+	data += "menuitem.update-available, menuitem.update-available:hover, menuitem.update-available:active { background: #ffd666; color: #1f1f1f; }\n";
+
 	// Fix #810: Insetsetive context menus on OSX
 	g_object_get (G_OBJECT (gtk_settings), "gtk-theme-name", &theme_name, NULL);
 	if ( String(theme_name) == "Adwaita" )
